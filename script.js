@@ -27,6 +27,3 @@ expenses = getExpenses()
 appData.expenses[expenses[0]] = expenses[1]
 console.log(appData.expenses)
 
-
-alert()
-
