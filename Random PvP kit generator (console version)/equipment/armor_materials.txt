@@ -1,0 +1,6 @@
+leather
+iron
+golden
+diamond
+netherite
+chainmail

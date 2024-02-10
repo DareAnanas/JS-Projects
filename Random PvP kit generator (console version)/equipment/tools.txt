@@ -1,0 +1,6 @@
+Pickaxe
+shovel
+water_bucket
+lava_bucket
+flint_and_steel
+fishing_rod

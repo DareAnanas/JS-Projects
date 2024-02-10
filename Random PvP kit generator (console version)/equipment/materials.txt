@@ -1,0 +1,10 @@
+wooden
+wooden
+stone
+stone
+iron
+iron
+golden
+golden
+diamond
+netherite

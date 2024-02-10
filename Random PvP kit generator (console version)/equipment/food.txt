@@ -1,0 +1,10 @@
+cooked_mutton
+cooked_porkchop
+cooked_salmon
+steak
+baked_potato
+bread
+carrot
+cooked_chicken
+cooked_cod
+cooked_rabbit

@@ -1,0 +1,9 @@
+strong_healing
+strong_regeneration
+golden_apple
+enchanted_golden_apple
+ender_pearl
+tnt
+end_crystal
+oak_boat
+firework_rocket

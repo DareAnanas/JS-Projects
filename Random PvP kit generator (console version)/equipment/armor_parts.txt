@@ -1,0 +1,4 @@
+helmet
+chestplate
+leggings
+boots
