@@ -23,7 +23,7 @@ app.get('/', (request, response) => {
     const equipmentDirName = 'equipment';
     const equipment = getEquipment(equipmentDirName);
     // response.send(`This is equipment list: ${equipment}`);
-    response.json(equipment);
+    response.render('index', equipment);
 })
 
 app.listen(port, () => {
