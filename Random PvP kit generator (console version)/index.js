@@ -5,6 +5,10 @@ const path = require('path')
 const app = express();
 const port = 3000;
 
+app.set('view engine', 'ejs');
+app.set('views', 'views');
+app.use('/kit_generator', express.static('kit_generator'));
+
 function getEquipment(equipmentDirName) {
     let equipment = {};
     let equipmentFileNames = filesystem.readdirSync(equipmentDirName);
@@ -22,8 +26,7 @@ function getEquipment(equipmentDirName) {
 app.get('/', (request, response) => {
     const equipmentDirName = 'equipment';
     const equipment = getEquipment(equipmentDirName);
-    // response.send(`This is equipment list: ${equipment}`);
-    response.render('index', equipment);
+    response.render('index', { equipment });
 })
 
 app.listen(port, () => {
