@@ -1,13 +1,19 @@
+let kitText = document.getElementById('kit');
+
 document.addEventListener('DOMContentLoaded', () => {
     fetch('/equipment')
     .then(response => response.json())
     .then(equipment => {
         let kit = generateKit(equipment);
-        console.log(kit);
+        kitText.textContent = kit.join('\n');
     }).catch(error => {
         console.error('Error fetching data:', error);
     })
 })
+
+function generateGiveCommands(kit) {
+    
+}
 
 function generateKit(equipment) {
     let kit = [];
