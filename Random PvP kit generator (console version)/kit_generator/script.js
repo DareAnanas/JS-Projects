@@ -15,16 +15,57 @@ function generateGiveCommands(kit) {
     
 }
 
+class SlotGenerator {
+    equipment;
+
+    constructor(equipment) {
+        this.equipment = equipment;
+    }
+
+    generateSlot(category) {
+        let random = _random(this.equipment[category].length);
+        let slot = this.equipment[category][random];
+        return slot;
+    }
+
+    
+}
+
+class EquipmentGenerator {
+    equipment;
+    slotGenerator;
+
+    constructor(equipment) {
+        this.equipment = equipment;
+        this.slotGenerator = new SlotGenerator(equipment);
+    }
+
+    generateMeleeWeapon() {
+        let slot = this.slotGenerator.generateSlot('melee_weapon');
+        let material = this.slotGenerator.generateSlot('materials');
+        slot = material + '_' + slot;
+        return slot;
+    }
+
+    generateTool() {
+        let slot = this.slotGenerator.generateSlot('tools');
+        // let excludedTools = this.equipment.tools.filter(tool => tool != slot);
+        if (checkToolForMaterial(slot)) {
+            let material = this.slotGenerator.generateSlot('materials');
+            slot = material + '_' + slot;
+        }
+        return slot;
+    }
+}
+
 function generateKit(equipment) {
     let kit = [];
     let random;
     let slot;
+    let equipmentGenerator = new EquipmentGenerator(equipment);
 
-    random = _random(equipment.melee_weapon.length);
-    slot = equipment.melee_weapon[random];
-    random = _random(equipment.materials.length);
-    slot = equipment.materials[random] + '_' + slot;
-    kit.push(slot);
+    let meleeWeapon = equipmentGenerator.generateMeleeWeapon();
+    kit.push(meleeWeapon);
 
     random = _random(equipment.tools.length);
     slot = equipment.tools[random];
