@@ -24,9 +24,13 @@ function getEquipment(equipmentDirName) {
 }
 
 app.get('/', (request, response) => {
+    response.render('index');
+})
+
+app.get('/equipment', (request, response) => {
     const equipmentDirName = 'equipment';
     const equipment = getEquipment(equipmentDirName);
-    response.render('index', { equipment });
+    response.json(equipment);
 })
 
 app.listen(port, () => {

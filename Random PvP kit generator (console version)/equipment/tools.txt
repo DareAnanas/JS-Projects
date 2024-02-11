@@ -1,4 +1,4 @@
-Pickaxe
+pickaxe
 shovel
 water_bucket
 lava_bucket
